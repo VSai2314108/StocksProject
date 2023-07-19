@@ -16,4 +16,9 @@ export class StocksProjectStack extends Stack {
     partitionKey: { name: 'ticker', type: AttributeType.STRING },
     sortKey: { name: 'compositeperiod', type: AttributeType.STRING },
   });
+
+  bars_table_2 = new Table(this, 'BarsTable', {
+    partitionKey: { name: 'ticker', type: AttributeType.STRING },
+    sortKey: { name: 'interval#year#month#day#hour#minute', type: AttributeType.STRING },
+  }); 
 }
